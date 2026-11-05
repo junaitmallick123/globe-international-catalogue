@@ -23,3 +23,20 @@ if (selected && product) {
   selected.hidden = false;
   document.querySelector(".email").href += "?subject=" + encodeURIComponent("Equipment enquiry: " + product);
 }
+
+// Keep depth effects on precise pointers and respect reduced-motion settings.
+const allowTilt = matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
+for (const surface of document.querySelectorAll(".product, .hero-photo")) {
+  surface.addEventListener("pointermove", (event) => {
+    if (!allowTilt.matches || event.pointerType === "touch") return;
+    const bounds = surface.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    surface.style.setProperty("--tilt-x", (-y * 7).toFixed(2) + "deg");
+    surface.style.setProperty("--tilt-y", (x * 7).toFixed(2) + "deg");
+  });
+  surface.addEventListener("pointerleave", () => {
+    surface.style.removeProperty("--tilt-x");
+    surface.style.removeProperty("--tilt-y");
+  });
+}

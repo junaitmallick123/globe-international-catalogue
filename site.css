@@ -2,3 +2,154 @@
 @media(max-width:900px){.wrap{width:calc(100% - 40px)}.home-groups{grid-template-columns:repeat(2,1fr)}.product figure img{height:165px}.catalog-grid,.factory-grid{gap:25px}.story-grid img{height:205px}.mast-cta{display:none}}
 @media(max-width:670px){.wrap{width:calc(100% - 30px)}.topline{font-size:.55rem}.mast{flex-direction:column;justify-content:center;gap:0;min-height:0;padding-top:8px}.brand{width:195px;flex:auto}.mast nav{justify-content:space-between;width:100%;gap:8px;max-width:390px}.mast nav a{font-size:.86rem;padding:8px 0}.catalog-grid,.factory-grid,.split,.contact-grid{grid-template-columns:1fr}.catalog-grid figure img,.factory-grid figure img,.split>img,.split figure img{height:290px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.product figure img{height:133px}.product-body{padding:12px}.product h2{font-size:1.16rem}.product p:not(.eyebrow){font-size:.88rem}.story-grid{grid-template-columns:1fr}.story-grid img{height:245px}.section-head,.foot{align-items:start}.section-head{flex-direction:column;gap:8px}.foot{flex-direction:column;gap:8px}.groups a{font-size:.82rem;padding:.7rem;gap:.35rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Globe International catalogue refresh */
+body.catalog {
+  --ink: #102247;
+  --accent: #152c61;
+  --muted: #485a76;
+  --line: #c7d4e6;
+  --paper: #f5f8fd;
+  --radius: 16px;
+  background:
+    radial-gradient(ellipse at 86% 37%, #e4edfc 0, transparent 42%),
+    var(--paper);
+}
+.catalog .topline { background: #101f45; }
+.catalog header {
+  background: #f9fbff;
+  border-bottom-color: #dbe4f0;
+}
+.catalog .mast nav [aria-current] { border-color: #b51d35; }
+.catalog .button:not(.secondary) {
+  background: #142e64;
+  box-shadow: 0 6px 16px #12275226;
+}
+.catalog .button.secondary {
+  background: #ffffffc9;
+  border-color: #b2c1d7;
+}
+.catalog .catalog-hero, .catalog .range-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 30%, #4569aa 0%, transparent 55%),
+    linear-gradient(126deg, #101b40 20%, #203e79 100%);
+  color: #fff;
+}
+.catalog .catalog-hero::before, .catalog .range-head::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(#c7d9ff17 1px, transparent 1px),
+    linear-gradient(90deg, #c7d9ff17 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(90deg, transparent 12%, #000);
+  pointer-events: none;
+}
+.catalog .catalog-hero .eyebrow, .catalog .range-head .eyebrow { color: #ffadba; }
+.catalog .catalog-hero .lead, .catalog .range-head .lead { color: #e3ecff; }
+.catalog .catalog-hero .button:not(.secondary) {
+  background: #b01832;
+  border-color: #e47587;
+}
+.catalog .catalog-grid .hero-photo {
+  padding: 10px;
+  background: #dbeaff29;
+  border-color: #e1edff70;
+  border-radius: 24px;
+  box-shadow: 0 28px 55px #09152b70, inset 0 1px 0 #ffffff65;
+  transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform .25s ease-out;
+}
+.hero-photo img { border-radius: 15px 15px 4px 4px; }
+.catalog .hero-photo figcaption { background: transparent; color: #edf3ff; }
+.catalog .range-head { padding-block: clamp(30px, 5vw, 65px); }
+.range-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, .65fr);
+  align-items: center;
+  gap: 24px;
+}
+.range-art { min-width: 0; display: grid; place-items: center; }
+.orbit-frame {
+  width: min(100%, 290px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  perspective: 650px;
+  border: 1px solid #c5dcff50;
+  border-radius: 32px;
+  background: linear-gradient(145deg, #e4f0ff30, #a9c5ff0a);
+  box-shadow: 0 25px 55px #09142f66, inset 0 1px 0 #e6f0ff69;
+}
+.globe-volume {
+  width: 69%;
+  aspect-ratio: 1;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-19deg) rotateY(-32deg) rotateZ(-12deg);
+  animation: globe-turn 2.9s cubic-bezier(.2,.6,.35,1) both;
+}
+.globe-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #dceaffb5;
+  border-radius: 50%;
+  transform: rotateY(var(--ring-angle, 0deg));
+  box-shadow: 0 0 14px #abc8ff35;
+}
+.globe-ring:nth-child(2) { --ring-angle: 36deg; }
+.globe-ring:nth-child(3) { --ring-angle: 72deg; }
+.globe-ring:nth-child(4) { --ring-angle: 108deg; }
+.globe-ring:nth-child(5) { --ring-angle: 144deg; }
+.globe-ring:last-child {
+  transform: rotateX(90deg) scale(1.12);
+  border-color: #ff91a3;
+  box-shadow: 0 0 16px #f346665c;
+}
+@keyframes globe-turn {
+  from { transform: rotateX(-19deg) rotateY(155deg) rotateZ(-12deg); }
+  to { transform: rotateX(-19deg) rotateY(-32deg) rotateZ(-12deg); }
+}
+.filter-panel {
+  padding: 13px 16px 1px;
+  margin-bottom: 22px;
+  border: 1px solid #c7d5e8;
+  border-radius: var(--radius);
+  background: #ffffffad;
+  box-shadow: 0 8px 30px #1835630c, inset 0 1px 0 #fff;
+}
+.catalog .filters button { border-radius: 999px; }
+.catalog .filters button[aria-pressed="true"] { box-shadow: inset 0 -2px 0 #dc5068; }
+.catalog .product, .catalog .contact-card {
+  background: linear-gradient(145deg, #fffffff5, #f1f6ffba);
+  box-shadow: 0 10px 25px #1d386214, inset 0 1px 0 #fff;
+}
+.catalog .product {
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform .25s ease-out, box-shadow .25s ease-out;
+}
+.catalog .product:hover, .catalog .product:focus-within { box-shadow: 0 15px 35px #1d386226; }
+.catalog .product figure { padding: 8px 8px 0; }
+.catalog .product figure img { border-radius: 10px; }
+.catalog .product figcaption { background: transparent; }
+.catalog .product-body .eyebrow { color: #972039; }
+@supports (backdrop-filter: blur(8px)) {
+  .catalog header, .filter-panel { backdrop-filter: blur(12px); }
+  .catalog header { background: #f9fbffeb; }
+}
+@media (max-width: 670px) {
+  .range-layout { grid-template-columns: minmax(0, 1fr) minmax(85px, 27%); gap: 10px; }
+  .range-head .intro h1 { font-size: clamp(2.15rem, 8vw, 3.2rem); }
+  .orbit-frame { border-radius: 14px; }
+  .filter-panel { padding-inline: 10px; }
+  .catalog .product figure { padding: 5px 5px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .globe-volume { animation: none; }
+  .catalog .product, .catalog .catalog-grid .hero-photo { transform: none; transition: none; }
+}
