@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Contact Globe International for product information or a quotation."><title>Contact | Globe International</title><link rel="stylesheet" href="site.css?v=3"><script src="site.js?v=3" defer></script></head><body class="catalog"><a href="#main" class="skip">Skip to content</a><div class="topline" id="top"><div class="wrap"><span>ENGINEERING EQUIPMENT · INDIA</span><span>DESIGN PREVIEW / 03</span></div></div><header><div class="wrap mast"><a href="index.html" class="brand"><img src="media/globe-logo.png" alt="Globe International"></a><nav aria-label="Main"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About us</a><a href="contact.html" aria-current="page">Contact</a></nav><a class="button mast-cta" href="contact.html">Enquire<span aria-hidden="true"> ↗</span></a></div></header><main id="main"><section class="inner-head range-head"><div class="wrap range-layout"><div class="intro"><p class="eyebrow">PRODUCT ENQUIRIES</p><h1>Discuss your equipment needs</h1><p class="lead">Tell the team what you need a machine or vehicle to do, how many units you require and where they’ll be used.</p></div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Contact Globe International for product information or a quotation."><title>Contact | Globe International</title><link rel="stylesheet" href="site.css?v=5"><script src="site.js?v=5" defer></script></head><body class="catalog"><a href="#main" class="skip">Skip to content</a><div class="topline" id="top"><div class="wrap"><span>ENGINEERING EQUIPMENT · INDIA</span><span>DESIGN PREVIEW / 03</span></div></div><header><div class="wrap mast"><a href="index.html" class="brand"><img src="media/globe-logo.png" alt="Globe International"></a><nav aria-label="Main"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About us</a><a href="contact.html" aria-current="page">Contact</a></nav><a class="button mast-cta" href="contact.html">Enquire<span aria-hidden="true"> ↗</span></a></div></header><main id="main"><section class="inner-head range-head"><div class="wrap range-layout"><div class="intro"><p class="eyebrow">PRODUCT ENQUIRIES</p><h1>Discuss your equipment needs</h1><p class="lead">Tell the team what you need a machine or vehicle to do, how many units you require and where they’ll be used.</p></div>
 <div class="range-art" aria-hidden="true">
   <div class="orbit-frame">
     <div class="hero-emblem">
@@ -8,7 +8,87 @@
     </div>
   </div>
 </div>
-</div></section><section class="wrap section contact-grid"><div class="contact-card"><p class="eyebrow">GLOBE INTERNATIONAL</p><h2>Sales enquiries</h2><p id="selected-product" hidden></p><div class="actions"><a class="button email" href="mailto:globe9506@gmail.com">Email the team<span aria-hidden="true"> ↗</span></a><a class="button secondary" href="tel:+919506123439">Call +91 95061 23439<span aria-hidden="true"> ↗</span></a></div><p><a href="mailto:globe9506@gmail.com">globe9506@gmail.com</a></p></div><div class="contact-card location-card"><p class="eyebrow">LOCATION</p><h2>Unnao, Uttar Pradesh</h2><address>Plot No. 34, Nehu Bagh Gate No. 1<br>Magarwara, Unnao, Uttar Pradesh 209862</address></div></section></main>
+</div></section><section class="wrap section enquiry-layout">
+  <div class="enquiry-card">
+    <p class="eyebrow">EQUIPMENT ENQUIRY</p>
+    <h2>Share your requirement</h2>
+    <p>Choose your enquiry type and equipment. Fields marked * are required.</p>
+    <form id="equipment-enquiry" hidden>
+      <div class="enquiry-fields">
+        <label>Enquiry type *
+          <select name="type" required>
+            <option value="general">General product enquiry</option>
+            <option value="gem">GeM bid</option>
+            <option value="tender">Other government tender</option>
+          </select>
+        </label>
+        <label>Product *
+          <select name="product" required>
+            <option value="">Select equipment</option>
+          <option value="0">Hopper tipper dumper</option>
+          <option value="1">Trailer-mounted suction machine</option>
+          <option value="2">Suction and jetting machine</option>
+          <option value="3">Trailer-mounted road sweeper</option>
+          <option value="4">Agricultural trailer</option>
+          <option value="5">Trailer-mounted tanker</option>
+          <option value="6">Stainless-steel sanitation cabins</option>
+          <option value="7">Mobile toilet unit</option>
+          <option value="8">Stainless-steel litter bins</option>
+            <option value="other">Other or multiple products</option>
+          </select>
+        </label>
+        <fieldset class="enquiry-wide enquiry-fields" id="tender-fields" hidden disabled>
+          <legend id="tender-legend">Tender details</legend>
+          <label><span id="reference-label">Tender reference</span>
+            <input name="reference" maxlength="100">
+          </label>
+          <label>Submission deadline
+            <input name="deadline" type="date">
+          </label>
+        </fieldset>
+        <label>Full name *
+          <input name="name" autocomplete="name" required maxlength="100">
+        </label>
+        <label>Organisation or department
+          <input name="organisation" autocomplete="organization" maxlength="120">
+        </label>
+        <label>Email *
+          <input name="email" type="email" autocomplete="email" required maxlength="120">
+        </label>
+        <label>Phone
+          <input name="phone" type="tel" autocomplete="tel" maxlength="30">
+        </label>
+        <label>Quantity
+          <input name="quantity" type="number" min="1" step="1">
+        </label>
+        <label>Delivery city and state
+          <input name="location" maxlength="120">
+        </label>
+        <label class="enquiry-wide">Requirement details
+          <textarea name="details" rows="4" maxlength="500" placeholder="Tell us the intended use, required capacity or dimensions, and any other specifications."></textarea>
+        </label>
+      </div>
+      <button class="button" type="submit" aria-describedby="email-help">Open email draft <span aria-hidden="true">↗</span></button>
+      <p id="email-help">The form prepares an email in your email app. Review it there and press Send.</p>
+    </form>
+    <noscript><p>Use the email or phone link to share your enquiry.</p></noscript>
+  </div>
+  <div class="enquiry-sidebar">
+    <div class="enquiry-card">
+      <p class="eyebrow">GLOBE INTERNATIONAL</p>
+      <h2>Contact sales</h2>
+      <address>
+        <a class="email" href="mailto:globe9506@gmail.com">globe9506@gmail.com</a><br>
+        <a href="tel:+919506123439">+91 95061 23439</a>
+      </address>
+    </div>
+    <div class="enquiry-card">
+      <p class="eyebrow">LOCATION</p>
+      <h2>Unnao, Uttar Pradesh</h2>
+      <address>Plot No. 34, Nehu Bagh Gate No. 1<br>Magarwara, Unnao, Uttar Pradesh 209862</address>
+    </div>
+  </div>
+</section></main>
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
