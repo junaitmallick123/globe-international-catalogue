@@ -443,15 +443,22 @@ body.catalog {
   .info-grid { grid-template-columns: 1fr; gap: 10px; }
 }
 
-.product-photo-pending {
+
+.product figure .equipment-diagram {
   display: grid;
-  min-height: 145px;
   place-items: center;
-  padding: 20px;
-  border: 1px solid var(--line);
+  height: 205px;
   border-radius: 10px;
-  background: #e8effa;
-  color: var(--muted);
-  font-weight: 650;
-  text-align: center;
+  background: radial-gradient(ellipse at 50% 30%, #f9fbff, #e6eef9);
+  color: #243d66;
+}
+.equipment-diagram svg { width: min(88%, 330px); height: 90%; }
+@media (max-width: 900px) {
+  .product figure .equipment-diagram { height: 165px; }
+}
+@media (max-width: 670px) {
+  .product figure .equipment-diagram { height: 133px; }
+}
+@media (max-width: 580px) {
+  .product-section .product figure .equipment-diagram { height: 175px; }
 }
