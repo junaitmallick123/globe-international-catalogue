@@ -153,3 +153,129 @@ body.catalog {
   .globe-volume { animation: none; }
   .catalog .product, .catalog .catalog-grid .hero-photo { transform: none; transition: none; }
 }
+
+/* Shared glass surfaces and page-specific hero artwork. */
+.hero-emblem {
+  width: 53%;
+  aspect-ratio: 1;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(12deg) rotateY(-18deg);
+  animation: emblem-settle 1.2s cubic-bezier(.22,.72,.32,1) both;
+}
+.hero-emblem::before,
+.hero-emblem::after,
+.emblem-face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #d8e7ff80;
+  border-radius: 24%;
+  background: linear-gradient(145deg, #f0f6ff36, #b5cdff14);
+}
+.hero-emblem::before,
+.hero-emblem::after { content: ""; }
+.hero-emblem::before { transform: translate3d(16%, 11%, -32px); }
+.hero-emblem::after {
+  transform: translate3d(8%, 6%, -16px);
+  border-color: #ff9cac85;
+}
+.emblem-face {
+  display: grid;
+  place-items: center;
+  color: #f4f7ff;
+  box-shadow: inset 0 1px 0 #ffffff60, 0 18px 36px #081b483a;
+}
+.emblem-face svg { width: 57%; }
+@keyframes emblem-settle {
+  from { transform: rotateX(29deg) rotateY(-53deg) translateY(10px); }
+  to { transform: rotateX(12deg) rotateY(-18deg); }
+}
+.catalog .category-band {
+  background: linear-gradient(125deg, #dce8fa, #eff4fd);
+  padding-block: 16px;
+}
+.catalog .home-groups {
+  border: 0;
+  gap: 10px;
+  background: transparent;
+}
+.catalog .home-groups a {
+  border: 1px solid #cbd9ec;
+  border-radius: 12px;
+  background: #ffffffb8;
+  box-shadow: inset 0 1px 0 #fff, 0 5px 14px #213e6910;
+}
+.catalog .home-groups a:hover { background: #fff; }
+.catalog .about figure, .catalog .gallery figure {
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #fffffff5, #f1f6ffba);
+  box-shadow: 0 10px 25px #1d386214, inset 0 1px 0 #fff;
+}
+.catalog .about figure img, .catalog .gallery figure img { border-radius: 10px; }
+.catalog .about figcaption, .catalog .gallery figcaption { background: transparent; }
+.catalog .about figure, .catalog .contact-card {
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform .25s ease-out;
+}
+.catalog .contact-grid { align-items: stretch; gap: 20px; }
+.catalog .contact-card address { color: var(--muted); }
+.catalog #selected-product {
+  background: #e8effb;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+.catalog .site-footer {
+  background: radial-gradient(ellipse at 86% 0%, #2a4b87, transparent 56%), #101f45;
+  color: #f8faff;
+  padding-top: clamp(34px, 6vw, 62px);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr .6fr 1fr;
+  gap: 24px;
+  padding: clamp(18px, 3vw, 36px);
+  border: 1px solid #c9dcff45;
+  border-radius: 22px;
+  background: #d5e5ff14;
+  box-shadow: inset 0 1px 0 #ffffff24, 0 16px 36px #060f2340;
+}
+.footer-grid h2 {
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  margin-bottom: 14px;
+}
+.footer-brand a { display: inline-block; }
+.footer-brand img {
+  width: min(220px, 100%);
+  padding: 7px;
+  border-radius: 8px;
+  background: #fff;
+}
+.footer-brand p { margin-top: 10px; color: #e2ebff; }
+.footer-nav ul { list-style: none; margin: 0; padding: 0; }
+.footer-nav a, .footer-contact a { display: inline-block; padding-block: 2px; }
+.footer-contact address { display: grid; justify-items: start; color: #e2ebff; }
+.footer-contact address span { margin-top: 6px; }
+.site-footer a { text-underline-offset: 4px; overflow-wrap: anywhere; }
+.site-footer a:hover { color: #ffbfcb; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 18px;
+  font-size: .86rem;
+  color: #e2ebff;
+}
+@media (max-width: 670px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 385px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-emblem { animation: none; }
+  .catalog .about figure, .catalog .contact-card { transform: none; transition: none; }
+}

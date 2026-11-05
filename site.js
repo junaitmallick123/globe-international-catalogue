@@ -26,7 +26,7 @@ if (selected && product) {
 
 // Keep depth effects on precise pointers and respect reduced-motion settings.
 const allowTilt = matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
-for (const surface of document.querySelectorAll(".product, .hero-photo")) {
+for (const surface of document.querySelectorAll(".product, .hero-photo, .about figure, .contact-card")) {
   surface.addEventListener("pointermove", (event) => {
     if (!allowTilt.matches || event.pointerType === "touch") return;
     const bounds = surface.getBoundingClientRect();
