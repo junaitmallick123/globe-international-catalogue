@@ -279,3 +279,42 @@ body.catalog {
   .hero-emblem { animation: none; }
   .catalog .about figure, .catalog .contact-card { transform: none; transition: none; }
 }
+
+/* Equipment descriptions and procurement applications. */
+.product-section .product {
+  display: flex;
+  flex-direction: column;
+}
+.product-section .product-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: start;
+}
+.product-section .product-body .text-link { margin-top: auto; }
+.product-applications {
+  width: 100%;
+  margin: 2px 0 17px;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #e8effa;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+.product-applications dt { color: var(--ink); font-weight: 720; }
+.product-applications dd { margin: 3px 0 0; color: var(--muted); }
+.product-applications dd + dt { margin-top: 10px; }
+.procurement-note {
+  margin-top: 26px;
+  padding: 18px clamp(16px, 3vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffffb8;
+}
+.procurement-note h2 { font-size: 1.25rem; letter-spacing: -.02em; }
+.procurement-note p { max-width: 75ch; margin-top: 8px; color: var(--muted); }
+@media (max-width: 580px) {
+  .product-section .products { grid-template-columns: 1fr; }
+  .product-section .product figure img { height: 175px; }
+}
