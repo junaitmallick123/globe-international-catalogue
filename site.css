@@ -442,3 +442,16 @@ body.catalog {
 @media (max-width: 700px) {
   .info-grid { grid-template-columns: 1fr; gap: 10px; }
 }
+
+.product-photo-pending {
+  display: grid;
+  min-height: 145px;
+  place-items: center;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #e8effa;
+  color: var(--muted);
+  font-weight: 650;
+  text-align: center;
+}
