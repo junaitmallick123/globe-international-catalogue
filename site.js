@@ -2,12 +2,14 @@ const groups = ['Waste collection', 'Drain & road cleaning', 'Trailers & tankers
 const params = new URLSearchParams(location.search);
 const filterButtons = [...document.querySelectorAll("[data-filter]")];
 const cards = [...document.querySelectorAll("[data-group]")];
+const categories = [...document.querySelectorAll("[data-catalogue-group]")];
 function filter(group) {
   let shown = 0;
   for (const card of cards) {
     card.hidden = Boolean(group && card.dataset.group !== group);
     if (!card.hidden) shown++;
   }
+  for (const category of categories) category.hidden = Boolean(group && category.dataset.catalogueGroup !== group);
   for (const button of filterButtons) button.setAttribute("aria-pressed", String(button.dataset.filter === group));
   document.querySelector("#result-count").textContent = shown + (shown === 1 ? " item" : " items");
 }

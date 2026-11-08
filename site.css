@@ -481,3 +481,24 @@ body.catalog {
 @media (min-width: 581px) and (max-width: 950px) {
   .product-section .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Product catalogue sections and aligned image frames. */
+.product-section .filter-panel h2 { margin: 0 0 8px; font-size: 1.2rem; }
+.equipment-category { margin-block: 0 clamp(24px, 4vw, 44px); }
+.equipment-category > h2 {
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+.catalog .equipment-category .product { min-width: 0; transform: none; }
+.equipment-category .product h3 {
+  font-size: clamp(1.08rem, 2vw, 1.4rem);
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+.catalog .equipment-category .product figure img,
+.catalog .equipment-category .product figure .equipment-photo-empty {
+  height: clamp(155px, 21vw, 220px);
+  object-fit: contain;
+}
