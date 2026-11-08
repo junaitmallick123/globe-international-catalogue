@@ -1,4 +1,4 @@
-const groups = ['Waste collection', 'Drain & road cleaning', 'Trailers & tankers', 'Public sanitation'];
+const groups = ['Waste collection', 'Drain & road cleaning', 'Trailers & tankers', 'Public sanitation', 'Municipal infrastructure'];
 const params = new URLSearchParams(location.search);
 const filterButtons = [...document.querySelectorAll("[data-filter]")];
 const cards = [...document.querySelectorAll("[data-group]")];
