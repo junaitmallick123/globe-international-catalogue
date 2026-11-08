@@ -467,3 +467,17 @@ body.catalog {
 .catalog .dot { background: #ef8b79; }
 .catalog .text-link:hover { color: #a03733; }
 .catalog :focus-visible { outline-color: #b44a3f; }
+
+/* Keep portrait, landscape and pending product photos in the same frame. */
+.product-section .product figure img,
+.product-section .product figure .equipment-photo-empty {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+.product-section .product[hidden] { display: none; }
+@media (min-width: 581px) and (max-width: 950px) {
+  .product-section .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
