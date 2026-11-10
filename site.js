@@ -90,3 +90,23 @@ for (const surface of document.querySelectorAll(".product, .hero-photo, .about f
     surface.style.removeProperty("--tilt-y");
   });
 }
+
+
+// Animate once as a section enters view. Content is visible without scripting.
+if ("IntersectionObserver" in window && matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+  const arrivals = new IntersectionObserver((entries, observer) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      observer.unobserve(entry.target);
+      entry.target.classList.add("scroll-arrived");
+      entry.target.addEventListener("animationend", () => {
+        entry.target.classList.remove("scroll-arrived");
+      }, { once: true });
+    }
+  }, { threshold: 0.12 });
+
+  const sections = document.querySelectorAll(
+    ".editorial-heading, .info-card, .section-head, .category-band, .equipment-category > h2, .product, .about, .gallery"
+  );
+  for (const section of sections) arrivals.observe(section);
+}

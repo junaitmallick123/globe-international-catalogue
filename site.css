@@ -504,3 +504,40 @@ body.catalog {
 }
 
 .equipment-category:not(:has(.product:not([hidden]))) { display: none; }
+
+/* A layered glass accent over the workshop photograph. */
+.home-page .hero-depth-mark {
+  position: absolute;
+  z-index: 1;
+  inset: 1.2rem 1.2rem auto auto;
+  width: clamp(36px, 6vw, 62px);
+  aspect-ratio: 1;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transform: perspective(260px) rotateX(22deg) rotateY(-27deg);
+}
+.hero-depth-mark span {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #fff3dfb3;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #fff3df55, #11274736);
+  box-shadow: 0 8px 18px #09152b45;
+}
+.hero-depth-mark span:nth-child(2) { transform: translateZ(10px); }
+.hero-depth-mark span:nth-child(3) {
+  transform: translateZ(20px);
+  border-color: #ffc6b8;
+  background: linear-gradient(145deg, #ffb5a66b, #af4a4033);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home-page .hero-depth-mark { animation: depth-settle 850ms 180ms ease-out backwards; }
+  .scroll-arrived { animation: scroll-arrival 520ms cubic-bezier(.2,.7,.25,1) both; }
+}
+@keyframes depth-settle {
+  from { opacity: .5; transform: perspective(260px) translateY(-8px) rotateX(12deg) rotateY(-48deg); }
+}
+@keyframes scroll-arrival {
+  from { opacity: .72; translate: 0 14px; }
+  to { opacity: 1; translate: none; }
+}
